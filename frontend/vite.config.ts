@@ -37,7 +37,9 @@ const wsProxy: ProxyOptions = {
 export default defineConfig({
   plugins: [react()],
   server: {
+    host: "0.0.0.0", // дотоод сүлжээ: http://192.168.x.x:5173
     port: 5173,
+    strictPort: true,
     proxy: {
       "/api": apiProxy,
       "/ws": wsProxy,

@@ -31,6 +31,8 @@ class Settings(BaseSettings):
     allow_mock: bool = True
 
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    # Дотоод сүлжээ (192.168.x.x:5173 г.м.) — хөгжүүлэлтийн горим
+    cors_allow_lan: bool = True
 
     @field_validator("data_dir", "image_dir", "recovered_dir", "export_dir", mode="before")
     @classmethod

@@ -79,9 +79,19 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_lan_origin_regex = (
+    r"https?://("
+    r"localhost|127\.0\.0\.1|"
+    r"192\.168\.\d{1,3}\.\d{1,3}|"
+    r"10\.\d{1,3}\.\d{1,3}\.\d{1,3}|"
+    r"172\.(1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3}"
+    r")(:\d+)?"
+)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,
+    allow_origin_regex=_lan_origin_regex if settings.cors_allow_lan else None,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
