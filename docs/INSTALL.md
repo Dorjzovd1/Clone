@@ -61,6 +61,20 @@ npm run dev
 UI: <http://localhost:5173> (Vite default). Frontend нь `/api` хүсэлтийг
 backend (`localhost:8000`) руу proxy хийнэ — `vite.config.ts`-д тохируулсан.
 
+**Дотоод сүлжээ (192.168.x.x):**
+
+```bash
+chmod +x scripts/start-frontend.sh scripts/start-backend.sh
+./scripts/start-frontend.sh    # http://192.168.1.19:5173
+./scripts/start-backend.sh     # өөр терминал
+```
+
+Эсвэл:
+
+```bash
+cd frontend && npx vite --host 0.0.0.0 --port 5173
+```
+
 ## 4. Device-д хандах эрх
 
 `pyudev`, `blockdev`, `mount`, `dd` зэрэг үйлдлүүд root эрх шаардана. Хөгжүүлэлтийн

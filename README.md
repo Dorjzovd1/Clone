@@ -48,8 +48,22 @@ Removable Device (/dev/sdX)
 ## Эхлэх
 
 Суулгац ба ажиллуулах заавар: [docs/INSTALL.md](docs/INSTALL.md)
-Production deploy: [docs/DEPLOY.md](docs/DEPLOY.md)
-Forensic журам: [docs/FORENSIC_PROCEDURE.md](docs/FORENSIC_PROCEDURE.md)
+
+### Хурдан асаах (Linux)
+
+```bash
+cd ~/Clone
+git pull
+chmod +x scripts/*.sh
+
+# Терминал 1 — Backend
+./scripts/start-backend.sh
+
+# Терминал 2 — Frontend (дотоод сүлжээ)
+./scripts/start-frontend.sh
+```
+
+Дотоод сүлжээ: `http://<SERVER_IP>:5173` (жишээ: http://192.168.1.19:5173)
 
 ```bash
 # Ubuntu орчны бэлтгэл (forensic tools + Python + Node)

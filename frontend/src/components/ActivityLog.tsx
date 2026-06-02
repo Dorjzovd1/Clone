@@ -1,6 +1,6 @@
 import type { AuditLog } from "../api/types";
-import { auditActionLabel } from "./audit";
-import { formatDate } from "./format";
+import { auditActionLabel } from "../lib/audit";
+import { formatDate } from "../lib/format";
 
 export default function ActivityLog({ logs }: { logs: AuditLog[] }) {
   if (logs.length === 0) {
